@@ -23,7 +23,7 @@ module Localer # :nodoc:
         opts = options.deep_symbolize_keys
         app_path = opts.fetch(:app_path, APP_PATH)
         file_options = file_config(CONFIG_FILENAME, app_path)
-        new(file_options.deep_merge(opts).deep_symbolize_keys)
+        new(**file_options.deep_merge(opts).deep_symbolize_keys)
       end
 
       def file_config(filename, path)
